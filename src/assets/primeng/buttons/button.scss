@@ -1,0 +1,363 @@
+.p-button{
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  padding: 10px 18px;
+  border-radius: $borderRadius;
+  background-color: $mainColorNormal;
+  border: solid 1px $mainColorNormal;
+  color: #ffffff;
+  outline: none;
+  position: relative;
+  &.p-button-link {
+    color: $mainColorNormal;
+    background-color: transparent;
+    border-color: transparent;
+    .p-button-label {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+    }
+    &:enabled {
+      &:hover {
+        background-color: transparent;
+        color: $mainColorDark;
+        border-color: transparent;
+        .p-button-label {
+          text-decoration-color: $mainColorDark;
+        }
+      }
+      &:focus {
+        background-color: transparent;
+        box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+        border-color: transparent;
+      }
+      &:active {
+        background-color: transparent;
+        color: $mainColorVeryDark;
+        border-color: transparent;
+      }
+    }
+  }
+
+ 
+
+  &.p-button-icon-only {
+    width: 30px;
+    .p-button-icon-left,
+    .p-button-icon-right{
+      margin: 0;
+    }
+  }
+  &:hover{
+    background-color: $mainColorDark;
+    border: 1px solid $mainColorDark;
+  }
+  &:active{
+    background: $mainColorVeryDark;
+    border-color: $mainColorVeryDark;
+  }
+  &:focus{
+    box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+  }
+  &:disabled{
+    color: $disabledColor;
+    background-color: $disabledBackgroundColor;
+    border-color: $disabledBorderColor;
+  }
+  
+  .p-button-icon{
+    font-size: .75rem;
+  }
+  .p-button-icon-right{
+    margin-left: 5px;
+  }
+  .p-button-icon-left{
+    margin-right: 5px;
+  }
+ 
+  &.p-button-secondary{
+    background: $secondaryColorNormal;
+    border: 1px solid $secondaryColorNormal;
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $secondaryBoxShadowColor;
+    }
+    &:hover{
+      background: $secondaryColorDark;
+      border-color:$secondaryColorDark;
+    }
+    &:active{
+      background: $secondaryColorVeryDark;
+      border-color: $secondaryColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+    
+  }
+  &.p-button-success{
+    background: $successColorNormal;
+    border: 1px solid $successColorNormal;
+    &:hover{
+      background: $successColorDark;
+      border-color:  $successColorDark;
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $successBoxShadowColor;
+    }
+    &:active{
+      background: $successColorVeryDark;
+      border-color: $successColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+  }
+  &.p-button-info{
+    background: $infoColorNormal;
+    border: 1px solid $infoColorNormal;
+    &:hover{
+      background: $infoColorDark;
+      border-color: $infoColorDark;
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $infoBoxShadowColor;
+    }
+    &:active{
+      background: $infoColorVeryDark;
+      border-color: $infoColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+  }
+  &.p-button-warning{
+    color: #333333;
+    background: $warningColorNormal;
+    border-color: $warningColorNormal;
+    &:hover{
+      background: $warningColorDark;
+      border-color: $warningColorDark;
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $warningBoxShadowColor;
+    }
+    &:active{
+      background: $warningColorVeryDark;
+      border-color: $warningColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+  }
+  &.p-button-help{
+    background: $helpColorNormal;
+    border-color: $helpColorNormal;
+    &:hover{
+      background:$helpColorDark;
+      border-color:$helpColorDark;
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $helpBoxShadowColor;
+    }
+    &:active{
+      background: $helpColorVeryDark;
+      border-color: $helpColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+  }
+  &.p-button-danger{
+    background: $dangerColorNormal;
+    border-color: $dangerColorNormal;
+    &:hover{
+      background: $dangerColorDark;
+      border-color: $dangerColorDark;
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem $dangerBoxShadowColor;
+    }
+    &:active{
+      background: $dangerColorVeryDark;
+      border-color: $dangerColorVeryDark;
+    }
+    &:disabled{
+      color: $disabledColor;
+      background-color: $disabledBackgroundColor;
+      border-color: $disabledBorderColor;
+    }
+  }
+
+
+  &.p-button-raised{
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  &.p-button-rounded{
+    border-radius: 2rem;
+    &.p-button-icon-only{
+      border-radius: 50%;
+      height: 2.357rem;
+      width: 2.357rem;
+      padding: 10px;
+    }
+  }
+  &.p-button-text{
+    background-color: transparent;
+    color: $mainColorVeryDark;
+    border-color: transparent;
+    &:hover{
+      background: rgba(84, 100, 122, 0.04);
+      border-color: transparent;
+    }
+    &:active{
+      background:transparent;
+      border-color: transparent;
+    }
+    &.p-button-secondary{
+      color: $secondaryColorNormal;
+      &:hover{
+        background: rgba(104, 159, 56, 0.04);
+      }
+    }
+    &.p-button-success{
+      color: $successColorNormal;
+      &:hover{
+        background: rgba(16, 125, 17, 0.04);
+      }
+    }
+    &.p-button-info{
+      color: $infoColorNormal;
+      &:hover{
+        background:rgba(40, 116, 157, 0.04);
+      }
+    }
+    &.p-button-warning{
+      color: $warningColorNormal;
+      &:hover{
+        background: rgba(237, 153, 11, 0.04);
+      }
+    }
+    &.p-button-help{
+      color: $helpColorNormal;
+      &:hover{
+        background: rgba(142, 36, 170, 0.04);
+      }
+    }
+    &.p-button-danger{
+      color: $dangerColorNormal;
+      &:hover{
+        background: rgba(192, 17, 32, 0.04);
+      }
+    }
+    &.p-button-plain{
+      color: #6c757d;
+      &:hover{
+        background-color: #e9ecef;
+      }
+      &:focus{
+        box-shadow: rgba(108, 117, 125, .28);
+      }
+    }
+  }
+  &.p-button-outlined {
+    background-color: transparent;
+    color: $mainColorNormal;
+    &:active{
+      background:transparent;
+    }
+    &.p-button-secondary{
+      color: $secondaryColorNormal;
+      &:hover{
+        background: rgba(104, 159, 56, 0.04);
+      }
+    }
+    &.p-button-success{
+      color: $successColorNormal;
+      &:hover{
+        background: rgba(16, 125, 17, 0.04);
+      }
+    }
+    &.p-button-info{
+      color: $infoColorNormal;
+      &:hover{
+        background:rgba(40, 116, 157, 0.04);
+      }
+    }
+    &.p-button-warning{
+      color: $warningColorNormal;
+      &:hover{
+        background: rgba(237, 153, 11, 0.04);
+      }
+    }
+    &.p-button-help{
+      color: $helpColorNormal;
+      &:hover{
+        background: rgba(142, 36, 170, 0.04);
+      }
+    }
+    &.p-button-danger{
+      color: $dangerColorNormal;
+      &:hover{
+        background: rgba(192, 17, 32, 0.04);
+      }
+    }
+    &.p-button-plain{
+      color: #6c757d;
+      &:hover{
+        background-color: #e9ecef;
+      }
+      &:focus{
+        box-shadow: rgba(108, 117, 125, .28);
+      }
+    }
+  }
+  
+  .p-badge{
+    margin-left: 0.5rem;
+    color: #2196F3;
+    background-color: #ffffff;
+    font-size: .74rem;
+    font-weight: 900;
+    padding: 0px;
+    width: 16px;
+    height: 16px;
+    min-width: 0;
+    line-height: 17px;
+    &.p-badge-secondary{
+      background: $secondaryColorNormal;
+      color: #fff;
+    }
+    &.p-badge-success{
+      background: $successColorNormal;
+      color: #fff;
+    }
+    &.p-badge-info{
+      background: $infoColorNormal;
+      color: #fff;
+    }
+    &.p-badge-warning{
+      background:  $warningColorNormal;
+      color: #333333;
+    }
+    &.p-badge-help{
+      background: $helpColorNormal;
+      color: #fff;
+    }
+    &.p-badge-danger{
+      background: $dangerColorNormal;
+      color: #fff;
+    }
+  }
+}

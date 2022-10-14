@@ -1,0 +1,46 @@
+.p-togglebutton{
+  &.p-button {
+    background: #ffffff;
+    border: $border;
+    color: #495057;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    .p-button-icon-left,
+    .p-button-icon-right {
+      color: #6c757d;
+    }
+    &:not(.p-disabled):not(.p-highlight):hover {
+      background: #e9ecef;
+      border-color: #ced4da;
+      color: #495057;
+      .p-button-icon-left,
+      .p-button-icon-right {
+        color: #6c757d;
+      }
+    }
+    &.p-highlight {
+      background: $mainColorNormal;
+      border-color: $mainColorNormal;
+      color: #ffffff;
+      .p-button-icon-left,
+      .p-button-icon-right {
+        color: #ffffff;
+      }
+      &:hover {
+        background: $mainColorNormal;
+        border-color: $mainColorNormal;
+        color: #ffffff;
+        .p-button-icon-left,
+        .p-button-icon-right {
+          color: #ffffff;
+        }
+      }
+    }
+    &.p-error,
+    &.p-invalid{
+      border-color: #f44336;
+    }
+  }
+}
+p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
+  border-color: #f44336;
+}

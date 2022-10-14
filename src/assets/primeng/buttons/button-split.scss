@@ -1,0 +1,112 @@
+.p-splitbutton{
+  &.p-button-secondary{
+    > .p-button {
+      background: $secondaryColorNormal;
+      border: 1px solid $secondaryColorNormal;
+      color: #fff;
+      &:hover{
+        background: $secondaryColorDark;
+        border-color:$secondaryColorDark;
+      }
+      &:active{
+        background: $secondaryColorVeryDark;
+        border-color: $secondaryColorVeryDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $secondaryBoxShadowColor;
+      }
+      
+    }
+  }
+  &.p-button-success{
+    > .p-button {
+      background: $successColorNormal;
+      border: 1px solid $successColorNormal;
+      color: #fff;
+      &:hover{
+        background: $successColorDark;
+        border-color: $successColorDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $successBoxShadowColor;
+      }
+      &:active{
+        background: $successColorVeryDark;
+        border-color: $successColorVeryDark;
+      }
+    }
+  }
+  &.p-button-info{
+    > .p-button { 
+      background: $infoColorNormal;
+      border: 1px solid $infoColorNormal;
+      color: #fff;
+      &:hover{
+        background: $infoColorDark;
+        border-color: $infoColorDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $infoBoxShadowColor;
+      }
+      &:active{
+        background: $infoColorVeryDark;
+        border-color: $infoColorVeryDark;
+      }  
+    }
+    
+  }
+  &.p-button-warning{
+    > .p-button { 
+      color: #333333;
+      background: $warningColorNormal;
+      border-color: $warningColorNormal;
+      &:hover{
+        background: $warningColorDark;
+        border-color: $warningColorDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $warningBoxShadowColor;
+      }
+      &:active{
+        background: $warningColorVeryDark;
+        border-color: $warningColorVeryDark;
+      }
+    }
+  }
+  &.p-button-help{
+    > .p-button { 
+      color: #fff;
+      background: $helpColorNormal;
+      border-color: $helpColorNormal;
+      &:hover{
+        background:$helpColorDark;
+        border-color:$helpColorDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $helpBoxShadowColor;
+      }
+      &:active{
+        background: $helpColorVeryDark;
+        border-color: $helpColorVeryDark;
+      }
+    }
+  }
+  &.p-button-danger{
+    > .p-button { 
+      color: #fff;
+      background: $dangerColorNormal;
+      border-color: $dangerColorNormal;
+      &:hover{
+        background: $dangerColorDark;
+        border-color: $dangerColorDark;
+      }
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $dangerBoxShadowColor;
+      }
+      &:active{
+        background: $dangerColorVeryDark;
+        border-color: $dangerColorVeryDark;
+      }
+    }
+  }
+}

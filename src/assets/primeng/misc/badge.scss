@@ -1,0 +1,41 @@
+.p-badge {
+  background: $mainColorNormal;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  &.p-badge-secondary {
+    background-color: $secondaryColorNormal;
+    color: #ffffff;
+  }
+  &.p-badge-success {
+    background-color: $successColorNormal;
+    color: #ffffff;
+  }
+  &.p-badge-info {
+    background-color: $infoColorNormal;
+    color: #ffffff;
+  }
+  &.p-badge-warning {
+    background-color: $warningColorNormal;
+    color: #212529;
+  }
+  &.p-badge-danger {
+    background-color: $dangerColorNormal;
+    color: #ffffff;
+  }
+  &.p-badge-lg {
+    font-size: 1.125rem;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+  }
+  &.p-badge-xl {
+    font-size: 1.5rem;
+    min-width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}

@@ -1,0 +1,51 @@
+
+.p-selectbutton{
+  > .p-button, 
+  .p-selectbutton.p-invalid > .p-button {
+    border-color: #f44336;
+  }
+  .p-button{
+    background: #ffffff;
+    border: $border;
+    color: #495057;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    &:not(.p-disabled):not(.p-highlight):hover {
+      background: #e9ecef;
+      border-color: #ced4da;
+      color: #495057;
+    }
+
+    &:not(.p-disabled):not(.p-highlight):hover .p-button-icon-left,
+    &:not(.p-disabled):not(.p-highlight):hover .p-button-icon-right {
+      color: #6c757d;
+    }
+    &.p-highlight {
+      background:$mainColorNormal;
+      border-color:$mainColorNormal;
+      color: #ffffff;
+      &:hover {
+        background:$mainColorDark;
+        border-color:$mainColorDark;
+        color: #ffffff;
+        .p-button-icon-left,
+        .p-button-icon-right {
+          color: #ffffff;
+        }
+      }
+      .p-button-icon-left,
+      .p-button-icon-right {
+        color: #ffffff;
+      }
+    }
+    .p-button-icon-left,
+    .p-button-icon-right{
+      color: #6c757d;
+    }
+    
+  }
+}
+p-selectbutton.ng-dirty.ng-invalid > .p-selectbutton > .p-button {
+  border-color: #f44336;
+}
+
+

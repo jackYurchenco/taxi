@@ -1,0 +1,46 @@
+.p-paginator{
+  border: $border;
+  border-radius: $borderRadius;
+  .p-paginator-pages{
+    .p-paginator-page{
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      width: 30px;
+      margin: 0 5px;
+      color: #666666;
+      outline: 0;
+      &.p-highlight{
+        color: $mainColorNormal;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .p-paginator-first,
+  .p-paginator-last{
+    margin: 0 5px;
+    outline: 0;
+    color:$mainColorNormal;
+    &.p-disabled{
+      color: $disabledColor;
+    }
+  }
+  .p-paginator-prev,
+  .p-paginator-next{
+    margin: 0 5px;
+    outline: 0;
+    color: $mainColorNormal;
+    &.p-disabled{
+      color: $disabledColor;
+    }
+  }
+  
+  .p-dropdown{
+    border: none;
+    outline: 0;
+    width: 86px;
+  }
+}

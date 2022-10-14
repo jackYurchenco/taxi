@@ -1,0 +1,66 @@
+
+.p-inputtext{
+  border: $border;
+  border-radius: $borderRadius;
+  padding: 10px;
+  outline: 0;
+  width: 100%;
+  &:focus{
+    border-color: $mainColorNormal;
+    box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+  }
+  &:hover{
+    border-color: $mainColorNormal;
+  }
+  &:disabled{
+    opacity: .5;
+    border: $border;
+    color: #333;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.p-input-icon-left,
+.p-input-icon-right {
+  position: relative;
+  width: 100%;
+  i{
+    position: absolute;
+    color: #6c757d;
+    top: 20px;
+    cursor: pointer;
+  }
+
+}
+.p-input-icon-left{
+  input{
+    padding: 10px 10px 10px 30px;
+  }
+  i{
+    left: 10px;
+  }
+}
+.p-input-icon-right{
+  input{
+    padding: 10px 30px 10px 10px;
+  }
+  i{
+    right: 10px;
+  }
+}
+.p-field{
+  label {
+    display: block;
+    margin: 0 0 3px 10px;
+    font-weight: bold;
+    color: $mainColorNormal;
+  }
+  small {
+    left: 10px;
+    display: block;
+    margin: 5px 0 0 10px;
+  }
+}
+

@@ -1,0 +1,166 @@
+@import "main-theme-colors.scss";
+
+
+//buttons
+@import './buttons/button.scss';
+@import './buttons/button-split.scss';
+@import './buttons/button-select.scss';
+@import './buttons/button-toggle.scss';
+
+//data
+@import './data/paginator.scss';
+@import './data/table.scss';
+@import './data/tree.scss';
+@import './data/tree-table.scss';
+//file
+@import './file/file-upload.scss';
+//form
+@import './form/auto-complete.scss';
+@import './form/calendar.scss';
+@import './form/checkbox.scss';
+@import './form/chips.scss';
+@import './form/dropdown.scss';
+@import './form/input-switch.scss';
+@import './form/input-text.scss';
+@import './form/multiselect.scss';
+@import './form/radio-button.scss';
+@import './form/float-label.scss';
+@import './form/input-group.scss';
+@import './form/input-mask.scss';
+@import './form/input-number.scss';
+@import './form/list-box.scss';
+@import './form/input-password.scss';
+@import './form/rating.scss';
+@import './form/slider.scss';
+
+//menu
+@import './menu/menu-bar.scss';
+@import './menu/menu.scss';
+@import './menu/breadcrumb.scss';
+@import './menu/mega-menu.scss';
+@import './menu/panelmenu.scss';
+@import './menu/slidemenu.scss';
+@import './menu/steps.scss';
+@import './menu/tabmenu.scss';
+@import './menu/tieredmenu.scss';
+@import './menu/context-menu.scss';
+
+//misc
+@import './misc/blockui.scss';
+@import './misc/badge.scss';
+@import './misc/tag.scss';
+@import './misc/progress-bar.scss';
+@import './misc/progress-spinner.scss';
+@import './misc/terminal.scss';
+
+
+//messages
+@import './messages/message.scss';
+@import './messages/message-inline.scss';
+@import './messages/toast.scss';
+
+//media
+@import './media/carousel.scss';
+
+//overlay
+@import './overlay/toltip.scss';
+@import './overlay/dialog.scss';
+@import './overlay/confirm-popup.scss';
+@import './overlay/overlaypanel.scss';
+@import './overlay/sidebar.scss';
+
+
+//panel
+@import './panel/accordion.scss';
+@import './panel/fieldset.scss';
+@import './panel/panel.scss';
+@import './panel/card.scss';
+@import './panel/tabview.scss';
+
+//file
+@import './file/file-upload.scss';
+
+
+
+
+html, body{
+  height: 100%;
+  .fa,
+  .pi{
+    font-size: 1em;
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Lato;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+}
+p, div, span, label, a, ul, li, tr, th, td, input, textarea{
+  // font-size: 10px; // .625rem
+  // font-size: 12px; // .75rem
+  // font-size: 14px; // .875rem 
+  // font-size: 15px; // .9375rem
+  // font-size: 16px; // 1rem
+  // font-size: 18px; // 1.125rem
+  // font-size: 22px; // 1.375rem
+  // font-size: 24px; // 1.5rem
+  font-size: .75rem;  // 12px
+  
+  line-height: 1.23;
+}
+
+
+.first-letter-uppercase{
+  display: inline-block;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+
+// style scroll
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+  background-color: $mainColorNormal;
+  border-radius: $borderRadius; 
+}
+
+
+
+.p-error {
+  color: #e91224;
+}
+.p-invalid{
+  color: #e91224;
+  border-color: #e91224;
+  outline-color: #e91224;
+}
+.p-success{
+  color:  #34a835;
+  border-color:  #34a835;
+  outline-color:   #34a835;
+}
+.p-disabled{
+  cursor: inherit !important;
+  opacity: 0.6;
+  &:hover{
+    background: transparent !important;
+  }
+}
+.p-label {
+  display: block;
+  font-weight: bold;
+  color: $mainColorNormal;
+}
+
+

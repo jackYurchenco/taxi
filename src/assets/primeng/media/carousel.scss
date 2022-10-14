@@ -1,0 +1,54 @@
+.p-carousel {
+  .p-carousel-content{
+    .p-carousel-prev,
+    .p-carousel-next {
+      width: 2rem;
+      height: 2rem;
+      color: #00539f;
+      border: 0 none;
+      background: transparent;
+      border-radius: 50%;
+      transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+      margin: 0.5rem;
+    }
+    .p-carousel-prev:enabled:hover,
+    .p-carousel-next:enabled:hover {
+      color: #495057;
+      border-color: transparent;
+      background: #e9ecef;
+    }
+    .p-carousel-prev:focus,
+    .p-carousel-next:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: 0 0 0 0.2rem #a6d5fa;
+    }
+  }
+
+  .p-carousel-indicators{
+    padding: 10px;
+    .p-carousel-indicator {
+      margin-right: 0.5rem;
+      margin-top: 5px;
+      button {
+        background-color: rgba(0, 83, 159, .5);
+        width: 2rem;
+        height: 0.5rem;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        border-radius: 0;
+        &:hover {
+          background: rgba(0, 83, 159, 1);
+        }
+      }
+      &.p-highlight button {
+        background: rgba(0, 83, 159, 8);
+        color: #495057;
+      }
+    }
+  }
+}
+
+
+
+
+

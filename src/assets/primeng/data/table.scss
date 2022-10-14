@@ -1,0 +1,111 @@
+.p-datatable{
+  margin: 0 0 2px 0;
+  .p-datatable-header{
+    padding: 5px 0;
+    input,
+    button{
+      width: 100%;
+    }
+  }
+  .p-datatable-wrapper{
+    border: $border;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    .p-datatable-thead{
+      > tr{
+        > th {
+          background-color:#e0e0e0;
+          padding: 12px 12px 9px;
+
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.23;
+          letter-spacing: normal;
+          text-align: left;
+          color: #666666;
+          outline: 0;
+          border-bottom: 3px solid #e0e0e0;
+          box-sizing: border-box;
+          &.p-highlight{
+            color: $mainColorNormal;
+            border-color:  $mainColorNormal;
+          }
+          .p-datatable-thead-label{
+            font-weight: bold;
+            margin: 0 5px 0 0;
+          }
+          p-sorticon{
+            font-size: .625rem;
+            position: relative;
+            top: -2px;
+            i{
+              font-weight: 900;
+            }
+          }
+        }
+      }
+    }
+    .p-datatable-tbody{
+      tr{
+        &:nth-child(even){
+          background-color: #f6f6f6;
+        }
+      }
+    }
+    tr{
+      th,
+      td{
+
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.23;
+        letter-spacing: normal;
+        color: #231f20;
+        padding: 12px;
+        &.status{
+          width: 40px;
+          i{
+            &.circle{
+              border: 1px solid #666666;
+              background-color: #e0e0e0;
+              border-radius: 50%;
+              width: 12px;
+              height: 12px;
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+        &.expanded{
+          width: 30px;
+          padding: 12px 5px 12px 12px;
+          button{
+            position: relative;
+            top: -1px;
+            padding: 0;
+            font-size: .625rem;
+            background: none;
+            color:#666666;
+            border: none;
+            box-shadow: none;
+            &.p-button-rounded{
+              &.p-button-icon-only{
+                width: auto;
+                height: auto;
+                &:hover{
+                  background-color: transparent;
+                }
+              }
+            }
+            .p-button-icon-left{
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}

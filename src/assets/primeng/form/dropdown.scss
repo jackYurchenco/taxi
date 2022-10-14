@@ -1,0 +1,152 @@
+.p-dropdown {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 3px;
+  position: relative;
+  width: 100%;
+  &:not(.p-disabled){
+    &:hover {
+      border-color: #00539f;
+    }
+    &.p-focus {
+      outline: 0 none;
+      outline-offset: 0;
+      border-color: #00539f;
+      box-shadow: 0 0 0 0.2rem #b8cfe4;
+    }
+  }
+  &.p-dropdown-clearable{
+    .p-dropdown-label {
+      padding-right: 1.5rem;
+    }
+  } 
+  .p-dropdown-label {
+    background: transparent;
+    border: 0 none;
+    &.p-placeholder {
+      color: #6c757d;
+    }
+    &:enabled:focus {
+      outline: 0 none;
+      box-shadow: none;
+    }
+  }
+  .p-dropdown-trigger {
+    background: transparent;
+    color: #6c757d;
+    width: 2.357rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .p-dropdown-clear-icon {
+    color: #6c757d;
+    right: 2.357rem;
+    top: 18px;
+  }
+}
+
+
+
+.p-dropdown-panel {
+  background: #ffffff;
+  color: #495057;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  &-contracts{
+    h4{
+      color: #00539f;
+      font-weight: bold;
+    }
+    span{
+      color: gray;
+      &.not-assigned{
+        color: #e91224;
+      }
+    }
+  }
+  .p-dropdown-header {
+    padding: 5px;
+    border-bottom: 0 none;
+    color: #495057;
+    background: #f8f9fa;
+    margin: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    .p-dropdown-filter {
+      padding-right: 1.5rem;
+    }
+    .p-dropdown-filter-icon {
+      right: 0.5rem;
+      color: #6c757d;
+    }
+  }
+  .p-dropdown-items{
+    
+    &:not(.p-dropdown-virtualscroll) {
+      padding: 0.5rem 0;
+      border-top: 1px solid #dfdfdf;
+    }
+    &.p-dropdown-virtualscroll{
+      .cdk-virtual-scroll-content-wrapper {
+        padding: 0.5rem 0;
+      }
+    } 
+    .p-dropdown-item {
+      margin: 0;
+      padding: 0.5rem 1rem;
+      border: 0 none;
+      color: #495057;
+      background: transparent;
+      transition: box-shadow 0.2s;
+      border-radius: 0;
+      &.p-highlight {
+        color: #495057;
+        background: #E3F2FD;
+      }
+      &:not(.p-highlight):not(.p-disabled):hover {
+        color: #495057;
+        background: #e9ecef;
+      }
+    }
+    .p-dropdown-empty-message {
+      padding: 0.5rem 1rem;
+      color: #495057;
+      background: transparent;
+    }
+
+    .p-dropdown-item-group {
+      &:nth-child(1){
+        .title-line {
+          border: none;
+        }
+      }
+      margin: 0;
+      padding: 0 0;
+      color: #495057;
+      background: #ffffff;
+      font-weight: 600;
+      
+      .title {
+        font-weight: bold;
+        color: #333;
+        border-top: 1px solid #dfdfdf;
+        padding:  0.75rem 1rem 0.25rem;
+        &-line{
+          border-top: 1px solid #dfdfdf;
+        }
+      }
+    }
+
+    
+  }
+}
+
+p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
+  border-color: #f44336;
+}
+
+
+
+

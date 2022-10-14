@@ -1,0 +1,51 @@
+.p-fileupload{
+  border: $border;
+  padding: 5px;
+  border-radius: $borderRadius;
+  &.p-fileupload-basic{
+    padding: 0;
+    border: none;
+  }
+  .p-fileupload-buttonbar{
+    padding: 0;
+    .p-button{
+      margin-right: 5px;
+      .p-button-icon{
+        font-size: .625rem;
+        font-weight: 900;
+      }
+    }
+  }
+  .p-fileupload-content{
+    p-progressbar{
+      display: block;
+      height: 6px;
+      position: relative;
+      margin: 5px 0;
+      .p-progressbar{
+        height: 100%;
+        border-radius: 0;
+      }
+    }
+    .p-fileupload-row{
+      padding: 0;
+      margin-bottom: 10px;
+      &:nth-last-child(1){
+        margin: 0;
+      }
+      button{
+        background: transparent;
+        color: #c74928;
+        outline: 0;
+        border: none;
+        box-shadow: none;
+        padding: 5px;
+        .p-button-icon{
+          font-size: .625rem;
+          font-weight: 900;
+        }
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,52 @@
+.p-tree {
+  border: $border;
+  border-radius: $borderRadius;
+  background: #ffffff;
+  color: #495057;
+  padding: 5px;
+  .p-tree-filter-container{
+    position: relative;
+    .p-tree-filter{
+      padding: 10px 30px 10px 10px;
+    }
+    .p-tree-filter-icon{
+      position: absolute;
+      right: 9px;
+      top: 21px;
+    }
+  }
+  .p-treenode{
+    padding: 5px;
+    .p-treenode-content{
+      border-radius: $borderRadius;
+      transition: box-shadow 0.2s;
+      padding: 0;
+      outline: 0;
+      margin: 5px;
+      &:focus{
+        box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+      }
+      .p-tree-toggler{
+        margin-right: 5px;
+        width: 32px;
+        height: 32px;
+        color: #6c757d;
+        border: 0 none;
+        background: transparent;
+        border-radius: 50%;
+        transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+        outline: 0;
+      }
+      .p-treenode-icon{
+        margin-right: 0.5rem;
+        color: #6c757d;
+      }
+      .p-checkbox{
+        margin-right: 0.5rem;
+      }
+      .p-treenode-label{
+       width: 100%;
+      }
+    }
+  }
+}

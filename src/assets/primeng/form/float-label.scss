@@ -1,0 +1,20 @@
+.p-float-label {
+  label{
+    left: 0.5rem;
+    color: #6c757d;
+    transition-duration: 0.2s;
+    font-weight: normal;
+  }
+  .p-inputwrapper-filled~label, 
+  .p-inputwrapper-focus~label,
+  input.p-filled~label,
+  input:focus~label,
+  textarea.p-filled~label, 
+  textarea:focus~label{
+    top: -8px;
+    font-size: .625rem;
+    font-weight: bold;
+    color: $mainColorNormal;
+  }
+}
+ 

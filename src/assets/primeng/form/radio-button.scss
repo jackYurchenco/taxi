@@ -1,0 +1,42 @@
+.p-radiobutton{
+  width: 20px;
+  height: 20px;
+  .p-radiobutton-box{
+    border: 2px solid #ced4da;
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    color: #495057;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    &:hover{
+      border-color: $mainColorNormal;
+    }
+    &.p-highlight{
+      border-color: $mainColorNormal;
+      background: $mainColorNormal;
+      color: #ffffff;
+      .p-radiobutton-icon {
+        transform: translateZ(0) scale(1);
+        visibility: visible;
+      }
+    }
+    &.p-focus{
+      box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+    }
+    .p-radiobutton-icon {
+      width: 12px;
+      height: 12px;
+      transition-duration: 0.2s;
+      background-color: #ffffff;
+    }
+  }
+}
+.p-radiobutton-label{
+  margin-left: 5px;
+}
+.p-field-radiobutton{
+  label{
+    margin: 0 5px;
+  }
+}

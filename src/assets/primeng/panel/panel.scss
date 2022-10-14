@@ -1,0 +1,48 @@
+.p-panel{
+  border-radius: $borderRadius;
+  border: $border;
+  position: relative;
+  .p-panel-header{
+    font-weight: bold;
+    font-size: .9375rem;
+    color: $mainColorNormal;
+    background-color: rgba(0, 83, 159, .15);
+    padding: 10px;
+    .p-panel-title{
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+    .p-menu{
+      font-weight: normal;
+    }
+    .p-panel-icons{
+      position: relative;
+      .p-menu{
+        left: auto !important;
+        top: 20px !important;
+        right: 20px;
+      }
+      button{
+        outline: 0;
+        font-size: .625rem;
+        padding: 5px;
+        background: none;
+        color: #666666;
+        border: none;
+        box-shadow: none;
+        margin: 0 0 0 10px;
+        span{
+          font-weight: bold;
+          color: $mainColorNormal;
+        }
+      }
+    }
+  }
+  .p-toggleable-content{
+    .p-panel-content{
+      border-top: $border;
+      padding: 0;
+    }
+  } 
+}

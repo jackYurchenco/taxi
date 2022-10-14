@@ -1,0 +1,24 @@
+.p-progressbar{
+  height: 20px;
+  background-color: #5D8FBF;
+  border-radius: $borderRadius;
+  line-height: 22px;
+  .p-progressbar-value{
+    background-color: $mainColorDark;
+    z-index: 1;
+    border-radius: $borderRadius;
+    .p-progressbar-value-animate{
+      &::before{
+        background-color: #fff;
+      }
+      &::after{
+        background-color: #fff;
+      }
+    }
+  }
+  .p-progressbar-label{
+    color: #fff;
+    z-index: 2;
+    line-height: 1.5rem;
+  }
+}

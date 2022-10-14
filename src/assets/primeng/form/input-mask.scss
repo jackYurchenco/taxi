@@ -1,0 +1,38 @@
+
+.p-inputmask{
+  &.p-inputtext {
+    color: #495057;
+    background: #ffffff;
+    padding: 10px;
+    border: $border;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    border-radius: $borderRadius;
+    width: 100%;
+    height: 100%;
+    max-height: 37px;
+    &:enabled:hover {
+      border-color: $mainColorNormal;
+    }
+    &:enabled:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: 0 0 0 0.2rem $mainBoxShadowColor;
+      border-color:  $mainColorNormal;
+    }
+    &.p-error,
+    &.p-invalid, 
+    &.ng-dirty.ng-invalid {
+      border-color: #f44336;
+    }
+    &.p-inputtext-sm {
+      font-size: 0.875rem;
+      padding: 0.4375rem 0.4375rem;
+    }
+    &.p-inputtext-lg {
+      font-size: 1.25rem;
+      padding: 0.625rem 0.625rem;
+    }
+  }
+}
+
