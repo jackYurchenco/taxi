@@ -39,11 +39,10 @@ import { RestoreAccountComponent } from './components/restore-account/restore-ac
     // EffectsModule.forFeature([AuthEffects])
   ],
   declarations: [
-  
     AuthComponent,
-       LogInComponent,
-       RegisterAccountComponent,
-       RestoreAccountComponent
+    LogInComponent,
+    RegisterAccountComponent,
+    RestoreAccountComponent
   ],
   providers: [
 	]
