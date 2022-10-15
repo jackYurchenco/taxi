@@ -20,6 +20,7 @@ import { RegisterAccountComponent } from './components/register-account/register
 import { RestoreAccountComponent } from './components/restore-account/restore-account.component';
 import { UserEffects } from './shared/store/user/user.effects';
 import * as user from './shared/store/user/user.reducer';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -34,8 +35,8 @@ import * as user from './shared/store/user/user.reducer';
     CheckboxModule,
 
 
-    // TranslateModule.forChild(),
-    // ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: `never` }),
+    TranslateModule.forChild(),
+    //ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: `never` }),
     StoreModule.forFeature(`user`, user.reducer),
     EffectsModule.forFeature([UserEffects])
   ],

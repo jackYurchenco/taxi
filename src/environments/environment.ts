@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  host: 'http://31.43.107.151:7312',
   api: {
     account: 'api/account'
   }

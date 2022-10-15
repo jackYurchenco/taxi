@@ -11,7 +11,9 @@ import { getUser } from '../../shared/store/user/user.actions';
 })
 export class LogInComponent implements OnInit, OnDestroy {
   user$: Observable<User>;
-  constructor(private _store: Store<{ user: User }>) { 
+  constructor(
+    private _store: Store<{ user: User }>
+  ) { 
     this.user$ = this._store.select((state) => state.user)
   }
 
@@ -21,6 +23,8 @@ export class LogInComponent implements OnInit, OnDestroy {
     })
 
     this.getUser('achumak', '1')
+
+    
   }
 
   ngOnDestroy(): void {
