@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "sha512-crypt-ts"
+            ],
             "outputPath": "dist/taxi",
             "index": "src/index.html",
             "main": "src/main.ts",

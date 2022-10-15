@@ -53,11 +53,14 @@
       }
       .p-toast-message-text{
         margin-left: 1rem;
+        overflow: hidden;
         .p-toast-summary{
           font-weight: 700;
         }
         .p-toast-detail{
           margin-top: .5rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
       .p-toast-icon-close{

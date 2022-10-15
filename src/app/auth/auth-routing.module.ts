@@ -5,7 +5,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { RestoreAccountComponent } from './components/restore-account/restore-account.component';
-import { AuthNavigation } from './shared/classes';
+import { AuthNavigation } from './shared/constants';
 
 const routes: Routes = [
   {
@@ -17,11 +17,11 @@ const routes: Routes = [
         component: LogInComponent
       },
       {
-        path: AuthNavigation.register,
+        path: AuthNavigation.Register,
         component: RegisterAccountComponent
       },
       {
-        path: AuthNavigation.restore,
+        path: AuthNavigation.Restore,
         component: RestoreAccountComponent
       }
     ]

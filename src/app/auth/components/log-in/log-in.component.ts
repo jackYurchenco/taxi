@@ -1,29 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/core/services/api.service';
-import { HttpService } from 'src/app/core/services/http.service';
-import { environment } from 'src/environments/environment';
-import { sha512 } from 'sha512-crypt-ts';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { User } from '../../shared/interfaces';
+import { getUser } from '../../shared/store/user/user.actions';
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.scss']
 })
-export class LogInComponent implements OnInit {
-
-  constructor(
-    private _apiService: ApiService,
-    private _httpService: HttpService
-  ) { }
+export class LogInComponent implements OnInit, OnDestroy {
+  user$: Observable<User>;
+  constructor(private _store: Store<{ user: User }>) { 
+    this.user$ = this._store.select((state) => state.user)
+  }
 
   ngOnInit(): void {
-    console.log(sha512.hex('1'))
-    this._httpService.post(`${this._apiService.host}/${environment.api.account}`, {
-      login: 'achumak',
-      password: sha512.hex('1')
-    }).subscribe((data)=>{
-      console.log(data)
+    this.user$.subscribe((user: User)=>{
+      console.log(user) 
     })
+
+    this.getUser('achumak', '1')
+  }
+
+  ngOnDestroy(): void {
+    
+  }
+
+  getUser(login: string, password: string) {
+    this._store.dispatch(getUser({  
+      payload: {
+        login,
+        password
+      }
+    }))
   }
 
 }

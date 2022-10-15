@@ -18,7 +18,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { RestoreAccountComponent } from './components/restore-account/restore-account.component';
-
+import { UserEffects } from './shared/store/user/user.effects';
+import * as user from './shared/store/user/user.reducer';
 
 @NgModule({
   imports: [
@@ -35,8 +36,8 @@ import { RestoreAccountComponent } from './components/restore-account/restore-ac
 
     // TranslateModule.forChild(),
     // ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: `never` }),
-    // StoreModule.forFeature(`auth`, auth.reducer),
-    // EffectsModule.forFeature([AuthEffects])
+    StoreModule.forFeature(`user`, user.reducer),
+    EffectsModule.forFeature([UserEffects])
   ],
   declarations: [
     AuthComponent,

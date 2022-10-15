@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Navigation } from './core/classes';
+import { CoreNavigation } from './core/constants/core-navigation'
 
 
 const routes: Routes = [
   {
     loadChildren: () => import(`./auth/auth.module`).then((module) => module.AuthModule),
-    path: Navigation.auth
+    path: CoreNavigation.Auth
   },
 ];
 
