@@ -1,3 +1,21 @@
 {
-    "lang" : "ua"
+    "lang" : "ua",
+    "Login" : "Увійти",
+	"LoginOrPhone" : "Логін або телефон",
+	"Password" : "Пароль",
+	"CreateAccount": "Створити акаунт",
+	"RestoreAccount": "Відновити акаунт",
+
+    "Authorization" : "Авторизація",
+	"Name": "Ім'я",
+	"ConfirmPassword": "Підтвердити пароль",
+	"Phone": "Телефон",
+	"Code": "Код",
+	"Create": "Створити",
+    "Restore": "Відновити",
+    "SendVerificationCode": "Надіслати код підтвердження",
+
+    "RegisterAccount": "Зареєструвати акаунт",
+    "NewPassword": "Новий пароль",
+	"ConfirmNewPassword": "Підтвердити новий пароль"
 }

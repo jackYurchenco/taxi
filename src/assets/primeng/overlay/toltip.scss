@@ -33,9 +33,9 @@
   }
   .p-tooltip-text{
     font-size: .75rem;
-    box-shadow: 0 0px 4px 0 rgba(0, 83, 159, .9);
+    box-shadow: 0 0px 0.2rem 0 $mainColorNormal;
     border: solid 1px #fff;
-    background-color: rgba(0, 83, 159, .9);
+    background-color: $mainColorNormal;
     font-weight: bold;
     font-stretch: normal;
     color: #fff;
@@ -45,10 +45,10 @@
   &.danger{
     .p-tooltip-text{
       font-size: .75rem;
-      box-shadow: 0 0 0 0.2rem #f9bdc2;
-      border-color: #e91224;
+      box-shadow: 0 0 0 0.2rem $dangerColorNormal;
+      border-color: $dangerColorVeryDark;
       border: solid 1px #fff;
-      background-color: #e91224;
+      background-color: $dangerColorDark;
       font-weight: bold;
       font-stretch: normal;
       color: #fff;

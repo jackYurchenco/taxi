@@ -7,7 +7,7 @@ import { MessageService } from 'primeng/api';
 export class MessagesService {
   private _life: number;
   constructor(private _messageService: MessageService) {
-    this._life = 300000;
+    this._life = 3000;
   }
 
 

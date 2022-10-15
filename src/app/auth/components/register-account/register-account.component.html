@@ -37,8 +37,9 @@
 						pRipple 
 						icon="pi pi-refresh" 
 						styleClass="p-button-warn"
-						[disabled]="!form.value.phone"
 						(onClick)="getCode(form.value.phone)"
+						pTooltip="{{ 'SendVerificationCode' | translate}}" 
+						tooltipPosition="top"
 					>
 					</button>  
 				</div>

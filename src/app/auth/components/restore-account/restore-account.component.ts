@@ -24,7 +24,8 @@ export class RestoreAccountComponent implements OnInit {
 
   }
   getCode(phone: string){
-    console.log(phone.replace(/\-/g,''));
+    if(phone)
+      console.log(phone.replace(/\-/g,''));
   }
 
 

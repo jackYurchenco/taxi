@@ -1,3 +1,21 @@
 {
-    "lang" : "ru"
+	"lang" : "ru",
+	"Login" : "Войти",
+	"LoginOrPhone" : "Логин или телефон",
+	"Password" : "Логин или телефон",
+	"CreateAccount": "Создать аккаунт",
+	"RestoreAccount": "Восстановить аккаунт",
+
+	"Authorization" : "Авторизация",
+	"Name": "Имя",
+	"ConfirmPassword": "Подтвердить пароль",
+	"Phone": "Телефон",
+	"Code": "Код",
+	"Create": "Создать",
+	"Restore": "Восстановить",
+	"SendVerificationCode": "Отправить код подтверждения",
+
+	"RegisterAccount": "Регистрация Аккаунта",
+	"NewPassword": "Новый пароль",
+	"ConfirmNewPassword": "Подтвердите новый пароль"
 }

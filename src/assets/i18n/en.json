@@ -1,5 +1,23 @@
 {
-    "lang" : "en"
+	"lang" : "en",
+	"Login" : "Login",
+	"LoginOrPhone" : "Login or phone",
+	"Password" : "Password",
+	"CreateAccount": "Create account",
+	"RestoreAccount": "Restore account",
+
+	"Authorization" : "Authorization",
+	"Name": "Name",
+	"ConfirmPassword": "Confirm password",
+	"Phone": "Phone",
+	"Code": "Code",
+	"Create": "Create",
+	"Restore": "Restore",
+	"SendVerificationCode": "Send verification code",
+
+	"RegisterAccount": "Register account",
+	"NewPassword": "New password",
+	"ConfirmNewPassword": "Confirm new password"
 }
 
  

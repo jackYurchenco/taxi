@@ -13,6 +13,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
 import { InputMaskModule } from 'primeng/inputmask';
+import { TooltipModule } from 'primeng/tooltip';
 // ngrx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -47,6 +48,7 @@ import { RestoreAccountNavigationComponent } from './components/restore-account/
     CheckboxModule,
     PasswordModule,
     InputMaskModule,
+    TooltipModule,
 
 
     TranslateModule.forChild(),

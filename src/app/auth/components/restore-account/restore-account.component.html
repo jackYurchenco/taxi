@@ -18,8 +18,9 @@
 						pRipple 
 						icon="pi pi-refresh" 
 						styleClass="p-button-warn"
-						[disabled]="!form.value.phone"
 						(onClick)="getCode(form.value.phone)"
+						pTooltip="{{ 'SendVerificationCode' | translate}}" 
+						tooltipPosition="top"
 					>
 					</button>  
 				</div>
@@ -45,8 +46,6 @@
 		<div>
 			<p-password placeholder="{{ 'ConfirmNewPassword' | translate }}" formControlName="confirmPassword" [toggleMask]="true"></p-password>
 		</div>
-		
-		
 	</div>
 	<!--navigation-->
 	<div class="navigation">
