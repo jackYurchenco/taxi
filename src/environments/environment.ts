@@ -5,7 +5,14 @@
 export const environment = {
   production: false,
   api: {
-    account: 'api/account'
+    account: {
+      base: 'api/account',
+      register: {
+        base: 'api/account/register',
+        sendConfirmCode: 'api/account/register/sendConfirmCode'
+      }
+    },
+    
   }
 };
 

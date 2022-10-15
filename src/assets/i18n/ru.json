@@ -22,5 +22,6 @@
 	"EnterPassword": "Введите пароль",
 	"Weak": "Слабый",
 	"Medium": "Средний",
-	"Strong": "Сложный"
+	"Strong": "Сложный",
+	"CodeSendedToPhone" : "Код отправлен на телефон: {{ value }}"
 }

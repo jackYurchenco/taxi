@@ -1,10 +1,16 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { User } from '../../interfaces';
 import {
+	createUser,
+	createUserError,
+	createUserSuccess,
 	getUser,
 	getUserError,
 	getUserSuccess,
 	resetUser,
+	sendCodeToPhone,
+	sendCodeToPhoneError,
+	sendCodeToPhoneSuccess,
 } from './user.actions';
 
 const initialState: User = {
@@ -33,6 +39,15 @@ const scoreboardReducer = createReducer(
 	on(getUserError, (state: User) => state),
 
 	on(resetUser, () => ({ ...initialState })),
+
+	on(createUser, (state: User) => state),
+	on(createUserSuccess, (state: User, action) => action.payload),
+	on(createUserError, (state: User) => state),
+
+
+	on(sendCodeToPhone, (state: User) => state),
+	on(sendCodeToPhoneSuccess, (state: User) => state),
+	on(sendCodeToPhoneError, (state: User) => state),
 );
 
 export function reducer(state = initialState, action: Action) {

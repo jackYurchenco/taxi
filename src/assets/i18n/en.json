@@ -22,7 +22,8 @@
 	"EnterPassword": "Enter a password",
 	"Weak": "Weak",
 	"Medium": "Medium",
-	"Strong": "Strong"
+	"Strong": "Strong",
+	"CodeSendedToPhone" : "Code sended to phone: {{ value }}"
 }
 
  

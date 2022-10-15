@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { sendCodeToPhone } from '../../shared/store/user/user.actions';
 
 @Component({
   selector: 'app-register-account',
@@ -8,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterAccountComponent implements OnInit {
   form: FormGroup;
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _store: Store
+  ) {
     this.form = this._formBuilder.group({
       name: [null, [Validators.required]],
       password: [null, [Validators.required]],
@@ -27,8 +32,12 @@ export class RegisterAccountComponent implements OnInit {
   }
 
   getCode(phone: string){
-    if(phone)
-      console.log(phone.replace(/\-/g,''));
+    if(phone) {
+      this._store.dispatch(sendCodeToPhone({
+        payload: phone.replace(/\-/g,'')
+      }))
+    }
+      
   }
 
 }

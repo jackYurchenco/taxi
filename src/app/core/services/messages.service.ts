@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
 
 @Injectable({
@@ -6,8 +7,11 @@ import { MessageService } from 'primeng/api';
 })
 export class MessagesService {
   private _life: number;
-  constructor(private _messageService: MessageService) {
-    this._life = 3000;
+  constructor(
+    private _messageService: MessageService,
+    private _translateService: TranslateService
+  ) {
+    this._life = 5000;
   }
 
 
@@ -20,8 +24,10 @@ export class MessagesService {
     });
 	}
 
-  success(code: number, msg: string) {
-    this._message(`success`, `${code}`, msg, this._life);
+  success(code: number, msg: string, value?: string) {
+    this._translateService.stream(msg, { value }).subscribe((text: string)=>{
+      this._message(`success`, `${code}`, text, this._life);
+    }).unsubscribe();
     // this._translationService.stream(`Success`).subscribe((successLabel) => {
     //   this._translationService.stream(msg).subscribe((text) => {
     //     this._message(`success`, successLabel, text);
@@ -29,8 +35,10 @@ export class MessagesService {
     // }).unsubscribe();
 	}
 
-  error(code: number, msg: string) {
-    this._message(`error`, `${code}`, msg, this._life);
+  error(code: number, msg: string, value?: string) {
+    this._translateService.stream(msg, { value }).subscribe((text: string)=>{
+      this._message(`error`, `${code}`, text, this._life);
+    }).unsubscribe();
     // this._translationService.stream(`Error`).subscribe((errorLabel) => {
     //   this._translationService.stream(value).subscribe((text) => {
     //     this._message(`error`, errorLabel, text);
