@@ -17,5 +17,10 @@
 
 	"RegisterAccount": "Регистрация Аккаунта",
 	"NewPassword": "Новый пароль",
-	"ConfirmNewPassword": "Подтвердите новый пароль"
+	"ConfirmNewPassword": "Подтвердите новый пароль",
+
+	"EnterPassword": "Введите пароль",
+	"Weak": "Слабый",
+	"Medium": "Средний",
+	"Strong": "Сложный"
 }

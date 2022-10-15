@@ -17,12 +17,15 @@
 
 	"RegisterAccount": "Register account",
 	"NewPassword": "New password",
-	"ConfirmNewPassword": "Confirm new password"
+	"ConfirmNewPassword": "Confirm new password",
+
+	"EnterPassword": "Enter a password",
+	"Weak": "Weak",
+	"Medium": "Medium",
+	"Strong": "Strong"
 }
 
  
-
-
 
 
 

@@ -19,10 +19,23 @@
 				placeholder="{{ 'Password' | translate }}" 
 				formControlName="password"
 				[toggleMask]="true"
+				promptLabel="{{ 'EnterPassword' | translate }}"
+				weakLabel="{{ 'Weak' | translate }}"
+				mediumLabel="{{ 'Medium' | translate }}"
+				strongLabel="{{ 'Strong' | translate }}"
 			></p-password>
 		</div>
 		<div>
-			<p-password placeholder="{{ 'ConfirmPassword' | translate }}" formControlName="confirmPassword" [toggleMask]="true"></p-password>
+			<p-password 
+				placeholder="{{ 'ConfirmPassword' | translate }}" 
+				formControlName="confirmPassword" 
+				[toggleMask]="true"
+				promptLabel="{{ 'EnterPassword' | translate }}"
+				weakLabel="{{ 'Weak' | translate }}"
+				mediumLabel="{{ 'Medium' | translate }}"
+				strongLabel="{{ 'Strong' | translate }}"
+			>
+			</p-password>
 		</div>
 		<div>
 			<div class="input-group" fxLayout="row">
@@ -44,7 +57,6 @@
 					</button>  
 				</div>
 			</div>
-			
 		</div>
 		<div>
 			<input
