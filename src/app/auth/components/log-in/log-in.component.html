@@ -1,1 +1,44 @@
-<p>{{ 'lang' | translate }}</p>
+<form 
+	[formGroup]="form" 
+	novalidate 
+	(ngSubmit)="auth(form)"
+>
+	<div>
+		<!--fileds-->
+		<div fxLayout="column" fxLayoutGap="25px" >
+			<div>
+				<input
+					formControlName="login"
+					pInputText
+					appInput
+					type="text"
+					placeholder="{{ 'Login' | translate }}"
+				>
+			</div>
+			<div>
+				<input
+					formControlName="password"
+					pInputText
+					appInput
+					type="password"
+					placeholder="{{ 'Password' | translate }}"
+				>
+			</div>
+		</div>
+		<!--nav-->
+		<div class="navigation">
+			<app-log-in-navigation></app-log-in-navigation>
+		</div>
+		<!--control-->
+		<div>
+			<button
+				pButton
+				appButton
+				[disabled]="form.invalid"
+				label="{{'Login' | translate}}"
+			></button>
+		</div>
+	</div>
+</form>
+
+

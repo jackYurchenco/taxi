@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-restore-account',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restore-account.component.scss']
 })
 export class RestoreAccountComponent implements OnInit {
-
-  constructor() { }
+  form: FormGroup;
+  constructor(private _formBuilder: FormBuilder) {
+    this.form = this._formBuilder.group({
+      phone: [null, [Validators.required]],
+      code: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      confirmPassword: [null, [Validators.required]]
+    });
+  }
 
   ngOnInit(): void {
   }
+
+  restore(form: FormGroup){
+
+  }
+  getCode(phone: string){
+    console.log(phone.replace(/\-/g,''));
+  }
+
 
 }

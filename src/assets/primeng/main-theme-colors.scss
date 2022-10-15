@@ -7,10 +7,10 @@ $disabledColor                :#e0e0e0;
 $disabledBackgroundColor      :#bfc0c2;
 $disabledBorderColor          :#bfc0c2;
 
-$mainColorNormal              :#00539f;
-$mainColorDark                :#08457f;
-$mainColorVeryDark            :#00316b;
-$mainBoxShadowColor           :#b8cfe4;
+$mainColorNormal              :rgba(0, 0, 0, .7);
+$mainColorDark                :rgba(0, 0, 0, .8);
+$mainColorVeryDark            :rgba(0, 0, 0, 0);
+$mainBoxShadowColor           :rgba(0, 0, 0, .2);
 
 $secondaryColorNormal         :#607D8B;
 $secondaryColorDark           :#54647a;

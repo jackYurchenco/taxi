@@ -1,1 +1,71 @@
-<p>register-account works!</p>
+<form
+	[formGroup]="form" 
+	novalidate 
+	(ngSubmit)="register(form)"
+>	
+	<!--fields-->
+	<div fxLayout="column" fxLayoutGap="5px">
+		<div>
+			<input
+				formControlName="name"
+				pInputText
+				appInput
+				type="text"
+				placeholder="{{ 'Name' | translate }}"
+			>
+		</div>
+		<div>
+			<p-password 
+				placeholder="{{ 'Password' | translate }}" 
+				formControlName="password"
+				[toggleMask]="true"
+			></p-password>
+		</div>
+		<div>
+			<p-password placeholder="{{ 'ConfirmPassword' | translate }}" formControlName="confirmPassword" [toggleMask]="true"></p-password>
+		</div>
+		<div>
+			<div class="input-group" fxLayout="row">
+				<div fxFlex>
+					<p-inputMask mask="999-999-99-99" placeholder="{{ 'Phone' | translate }}" formControlName="phone"></p-inputMask> 
+				</div>
+				<div>
+					<button 
+						appButton
+						type="button" 
+						pButton 
+						pRipple 
+						icon="pi pi-refresh" 
+						styleClass="p-button-warn"
+						[disabled]="!form.value.phone"
+						(onClick)="getCode(form.value.phone)"
+					>
+					</button>  
+				</div>
+			</div>
+			
+		</div>
+		<div>
+			<input
+				formControlName="code"
+				pInputText
+				appInput
+				type="text"
+				placeholder="{{ 'Code' | translate }}"
+			>
+		</div>
+	</div>
+	<!--navigation-->
+	<div class="navigation">
+		<app-register-account-navigation></app-register-account-navigation>
+	</div>
+	<!--control-->
+	<div class="control">
+		<button
+			pButton
+			appButton
+			[disabled]="form.invalid"
+			label="{{'Create' | translate}}"
+		></button>
+	</div>
+</form>

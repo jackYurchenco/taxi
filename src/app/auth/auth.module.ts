@@ -11,6 +11,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { PasswordModule } from 'primeng/password';
+import { InputMaskModule } from 'primeng/inputmask';
 // ngrx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -21,6 +23,10 @@ import { RestoreAccountComponent } from './components/restore-account/restore-ac
 import { UserEffects } from './shared/store/user/user.effects';
 import * as user from './shared/store/user/user.reducer';
 import { TranslateModule } from '@ngx-translate/core';
+import { DirectivesModule } from '../core/directives/directives.module';
+import { LogInNavigationComponent } from './components/log-in/log-in-navigation/log-in-navigation.component';
+import { RegisterAccountNavigationComponent } from './components/register-account/register-account-navigation/register-account-navigation.component';
+import { RestoreAccountNavigationComponent } from './components/restore-account/restore-account-navigation/restore-account-navigation.component';
 
 @NgModule({
   imports: [
@@ -28,11 +34,19 @@ import { TranslateModule } from '@ngx-translate/core';
     AuthRoutingModule,
     FlexLayoutModule,
     FormsModule,
+    ReactiveFormsModule,
+
+    FlexLayoutModule,
+
+    //custom
+    DirectivesModule,
 
     // primeng
     ButtonModule,
     InputTextModule,
     CheckboxModule,
+    PasswordModule,
+    InputMaskModule,
 
 
     TranslateModule.forChild(),
@@ -44,7 +58,10 @@ import { TranslateModule } from '@ngx-translate/core';
     AuthComponent,
     LogInComponent,
     RegisterAccountComponent,
-    RestoreAccountComponent
+    RestoreAccountComponent,
+    LogInNavigationComponent,
+    RegisterAccountNavigationComponent,
+    RestoreAccountNavigationComponent
   ],
   providers: [
 	]

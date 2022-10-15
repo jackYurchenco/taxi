@@ -17,7 +17,8 @@ export class HttpService {
 			'Accept-Language': localization,
 			'Authorization': `Basic ${token}`,
 			'Cache-Control': `no-cache`,
-			'Content-Type': `application/json`
+			'Content-Type': `application/json`,
+      'X-WO-API-APP-ID': 'YEI'
 		});
 	}
 

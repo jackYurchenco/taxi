@@ -1,0 +1,15 @@
+
+.container{
+	height: 100%;
+	.widget{
+		width: 280px;
+		box-sizing: border-box;
+		.logo{
+			margin: 5px 0 30px;
+			svg{
+				margin: 0 auto;
+    		display: block;
+			}
+		}
+	}
+}

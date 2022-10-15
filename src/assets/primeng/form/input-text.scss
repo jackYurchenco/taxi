@@ -20,7 +20,13 @@
       opacity: 0;
     }
   }
+  &.ng-dirty{
+    &.ng-invalid {
+      border-color: #e24c4c;
+    }
+  }
 }
+
 
 .p-input-icon-left,
 .p-input-icon-right {

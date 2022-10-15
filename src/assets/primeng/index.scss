@@ -163,4 +163,11 @@ p, div, span, label, a, ul, li, tr, th, td, input, textarea{
   color: $mainColorNormal;
 }
 
+.widget {
+  box-shadow: 0 2px 12px #0000001f;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  padding: 20px;
+}
+
 
