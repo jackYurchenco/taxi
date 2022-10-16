@@ -5,6 +5,7 @@
 >	
 	<!--fields-->
 	<div fxLayout="column" fxLayoutGap="5px">
+		<!--phone-->
 		<div>
 			<div class="input-group" fxLayout="row">
 				<div fxFlex>
@@ -16,9 +17,9 @@
 						type="button" 
 						pButton 
 						pRipple 
-						icon="pi pi-refresh" 
+						icon="pi pi-send" 
 						styleClass="p-button-warn"
-						(onClick)="getCode(form.value.phone)"
+						(onClick)="sendCode(form.value.phone)"
 						pTooltip="{{ 'SendVerificationCode' | translate}}" 
 						tooltipPosition="top"
 					>
@@ -27,16 +28,36 @@
 			</div>
 			
 		</div>
+		<!--code-->
 		<div>
-			<input
-				formControlName="code"
-				pInputText
-				appInput
-				type="text"
-				placeholder="{{ 'Code' | translate }}"
-			>
+			<div class="input-group" fxLayout="row">
+				<div fxFlex>
+					<input
+						formControlName="code"
+						pInputText
+						appInput
+						type="text"
+						placeholder="{{ 'Code' | translate }}"
+					>
+				</div>
+				<div>
+					<button 
+						appButton
+						type="button" 
+						pButton 
+						pRipple 
+						icon="pi pi-refresh" 
+						styleClass="p-button-warn"
+						(onClick)="checkCode(form.value.phone, form.value.code)"
+						pTooltip="{{ 'CheckVerificationCode' | translate}}" 
+						tooltipPosition="top"
+					>
+					</button>  
+				</div>
+			</div>
 		</div>
-		<div>
+		<!--new password-->
+		<div *ngIf="isVerifieCode">
 			<p-password 
 				placeholder="{{ 'NewPassword' | translate }}" 
 				formControlName="password"
@@ -47,7 +68,8 @@
 				strongLabel="{{ 'Strong' | translate }}"
 			></p-password>
 		</div>
-		<div>
+		<!--confirm password-->
+		<div *ngIf="isVerifieCode">
 			<p-password 
 				placeholder="{{ 'ConfirmNewPassword' | translate }}" 
 				formControlName="confirmPassword" 
@@ -61,7 +83,7 @@
 		</div>
 	</div>
 	<!--navigation-->
-	<div class="navigation">
+	<div class="navigation" [ngStyle]	= "isVerifieCode ? { 'margin': '10px 0 75px' } : { 'margin': '10px 0 163px' }">
 		<app-restore-account-navigation></app-restore-account-navigation>
 	</div>
 	<!--control-->

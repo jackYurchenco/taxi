@@ -10,6 +10,11 @@ export const environment = {
       register: {
         base: 'api/account/register',
         sendConfirmCode: 'api/account/register/sendConfirmCode'
+      },
+      restore: {
+        base: 'api/account/restore',
+        sendConfirmCode: 'api/account/restore/sendConfirmCode',
+        checkConfirmCode: 'api/account/restore/checkConfirmCode'
       }
     },
     

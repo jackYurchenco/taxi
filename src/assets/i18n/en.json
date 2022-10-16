@@ -5,6 +5,7 @@
 	"Password" : "Password",
 	"CreateAccount": "Create account",
 	"RestoreAccount": "Restore account",
+	"AccountPasswordRestored" : "Account password restored",
 
 	"Authorization" : "Authorization",
 	"Name": "Name",
@@ -14,6 +15,7 @@
 	"Create": "Create",
 	"Restore": "Restore",
 	"SendVerificationCode": "Send verification code",
+	"CheckVerificationCode": "Check verification code",
 
 	"RegisterAccount": "Register account",
 	"NewPassword": "New password",

@@ -1,7 +1,5 @@
-export interface UserNew {
+import { UserNewPassword } from "./user-new-password";
+
+export interface UserNew extends UserNewPassword {
 	name: string,
-	password: string,
-	confirmPassword: string,
-	phone: string,
-	code: string
 }

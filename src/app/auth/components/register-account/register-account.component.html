@@ -52,9 +52,9 @@
 						type="button" 
 						pButton 
 						pRipple 
-						icon="pi pi-refresh" 
+						icon="pi pi-send" 
 						styleClass="p-button-warn"
-						(onClick)="getCode(form.value.phone)"
+						(onClick)="sendCode(form.value.phone)"
 						pTooltip="{{ 'SendVerificationCode' | translate}}" 
 						tooltipPosition="top"
 					>

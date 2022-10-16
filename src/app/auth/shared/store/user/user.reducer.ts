@@ -1,6 +1,9 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { User } from '../../interfaces';
 import {
+	checkCodeForRestore,
+	checkCodeForRestoreError,
+	checkCodeForRestoreSuccess,
 	createUser,
 	createUserError,
 	createUserSuccess,
@@ -8,9 +11,15 @@ import {
 	getUserError,
 	getUserSuccess,
 	resetUser,
-	sendCodeToPhone,
-	sendCodeToPhoneError,
-	sendCodeToPhoneSuccess,
+	restoreUserPassword,
+	restoreUserPasswordError,
+	restoreUserPasswordSuccess,
+	sendCodeToPhoneForRegister,
+	sendCodeToPhoneForRegisterError,
+	sendCodeToPhoneForRegisterSuccess,
+	sendCodeToPhoneForRestore,
+	sendCodeToPhoneForRestoreError,
+	sendCodeToPhoneForRestoreSuccess,
 } from './user.actions';
 
 const initialState: User = {
@@ -44,10 +53,21 @@ const scoreboardReducer = createReducer(
 	on(createUserSuccess, (state: User) => state),
 	on(createUserError, (state: User) => state),
 
+	on(restoreUserPassword, (state: User) => state),
+	on(restoreUserPasswordSuccess, (state: User) => state),
+	on(restoreUserPasswordError, (state: User) => state),
 
-	on(sendCodeToPhone, (state: User) => state),
-	on(sendCodeToPhoneSuccess, (state: User) => state),
-	on(sendCodeToPhoneError, (state: User) => state),
+	on(sendCodeToPhoneForRegister, (state: User) => state),
+	on(sendCodeToPhoneForRegisterSuccess, (state: User) => state),
+	on(sendCodeToPhoneForRegisterError, (state: User) => state),
+
+	on(sendCodeToPhoneForRestore, (state: User) => state),
+	on(sendCodeToPhoneForRestoreSuccess, (state: User) => state),
+	on(sendCodeToPhoneForRestoreError, (state: User) => state),
+
+	on(checkCodeForRestore, (state: User) => state),
+	on(checkCodeForRestoreSuccess, (state: User) => state),
+	on(checkCodeForRestoreError, (state: User) => state),
 );
 
 export function reducer(state = initialState, action: Action) {

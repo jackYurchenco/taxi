@@ -5,6 +5,7 @@
 	"Password" : "Логин или телефон",
 	"CreateAccount": "Создать аккаунт",
 	"RestoreAccount": "Восстановить аккаунт",
+	"AccountPasswordRestored" : "Пароль учетной записи восстановлен",
 
 	"Authorization" : "Авторизация",
 	"Name": "Имя",
@@ -14,6 +15,7 @@
 	"Create": "Создать",
 	"Restore": "Восстановить",
 	"SendVerificationCode": "Отправить код подтверждения",
+	"CheckVerificationCode": "Проверить код подтверждения",
 
 	"RegisterAccount": "Регистрация Аккаунта",
 	"NewPassword": "Новый пароль",

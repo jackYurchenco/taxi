@@ -9,11 +9,19 @@ export enum UserTypes {
 	CreateSuccess = '[User] create success',
 	CreateError = '[User] create error',
 
-	Update = '[User] update',
-	UpdateSuccess = '[User] update success',
-	UpdateError = '[User] update error',
+	RestorePassword = '[User] restore password',
+	RestorePasswordSuccess = '[User] restore password success',
+	RestorePasswordError = '[User] restore password error',
 
-	SendCode = '[User] send code to phone',
-	SendCodeSuccess = '[User] send code to phone success',
-	SendCodeError = '[User] send code to phone error',
+	SendCodeForRegister = '[User] send code to phone for register',
+	SendCodeForRegisterSuccess = '[User] send code to phone for register success',
+	SendCodeForRegisterError = '[User] send code to phone for register error',
+
+	SendCodeForRestore = '[User] send code to phone for restore',
+	SendCodeForRestoreSuccess = '[User] send code to phone for restore success',
+	SendCodeForRestoreError = '[User] send code to phone for restore error',
+
+	CheckCodeForRestore = '[User] check code for restore',
+	CheckCodeForRestoreSuccess = '[User] check code for restore success',
+	CheckCodeForRestoreError = '[User] check code for restore error',
 }
