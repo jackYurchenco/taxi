@@ -41,7 +41,7 @@ const scoreboardReducer = createReducer(
 	on(resetUser, () => ({ ...initialState })),
 
 	on(createUser, (state: User) => state),
-	on(createUserSuccess, (state: User, action) => action.payload),
+	on(createUserSuccess, (state: User) => state),
 	on(createUserError, (state: User) => state),
 
 

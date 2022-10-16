@@ -14,6 +14,7 @@ import { MessageService } from 'primeng/api';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
+import * as loading from './core/store/loading/loading.reducer';
 
 @NgModule({
   declarations: [ 
@@ -25,7 +26,9 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({
+      loading: loading.reducer,
+    }, {}),
     EffectsModule.forRoot([]),
 		TranslateModule.forRoot({
 			loader: {

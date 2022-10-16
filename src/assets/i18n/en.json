@@ -23,7 +23,8 @@
 	"Weak": "Weak",
 	"Medium": "Medium",
 	"Strong": "Strong",
-	"CodeSendedToPhone" : "Code sended to phone: {{ value }}"
+	"CodeSendedToPhone" : "Code sended to phone: {{ value }}",
+	"AccountCreated": "Account created"
 }
 
  

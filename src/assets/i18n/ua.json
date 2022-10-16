@@ -1,27 +1,28 @@
 {
-    "lang" : "ua",
-    "Login" : "Увійти",
+	"lang" : "ua",
+	"Login" : "Увійти",
 	"LoginOrPhone" : "Логін або телефон",
 	"Password" : "Пароль",
 	"CreateAccount": "Створити акаунт",
 	"RestoreAccount": "Відновити акаунт",
 
-    "Authorization" : "Авторизація",
+	"Authorization" : "Авторизація",
 	"Name": "Ім'я",
 	"ConfirmPassword": "Підтвердити пароль",
 	"Phone": "Телефон",
 	"Code": "Код",
 	"Create": "Створити",
-    "Restore": "Відновити",
-    "SendVerificationCode": "Надіслати код підтвердження",
+	"Restore": "Відновити",
+	"SendVerificationCode": "Надіслати код підтвердження",
 
-    "RegisterAccount": "Зареєструвати акаунт",
-    "NewPassword": "Новий пароль",
+	"RegisterAccount": "Зареєструвати акаунт",
+	"NewPassword": "Новий пароль",
 	"ConfirmNewPassword": "Підтвердити новий пароль",
 
-    "EnterPassword": "Введіть пароль",
-    "Weak": "Слабкий",
+	"EnterPassword": "Введіть пароль",
+	"Weak": "Слабкий",
 	"Medium": "Середній",
 	"Strong": "Складний",
-    "CodeSendedToPhone" : "Код, надісланий на телефон: {{ value }}"
+	"CodeSendedToPhone" : "Код, надісланий на телефон: {{ value }}",
+	"AccountCreated": "Акаунт створено"
 }

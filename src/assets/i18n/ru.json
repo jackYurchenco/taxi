@@ -23,5 +23,6 @@
 	"Weak": "Слабый",
 	"Medium": "Средний",
 	"Strong": "Сложный",
-	"CodeSendedToPhone" : "Код отправлен на телефон: {{ value }}"
+	"CodeSendedToPhone" : "Код отправлен на телефон: {{ value }}",
+	"AccountCreated": "Аккаунт создан"
 }

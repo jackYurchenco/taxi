@@ -15,14 +15,14 @@
 					placeholder="{{ 'LoginOrPhone' | translate }}"
 				>
 			</div>
+			<!--password-->
 			<div>
-				<input
+				<p-password 
 					formControlName="password"
-					pInputText
-					appInput
-					type="password"
 					placeholder="{{ 'Password' | translate }}"
-				>
+					[toggleMask]="true"
+					[feedback]="false"
+				></p-password>
 			</div>
 		</div>
 		<!--nav-->

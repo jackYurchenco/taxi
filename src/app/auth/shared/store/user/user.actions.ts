@@ -10,7 +10,7 @@ export const getUserError = createAction(ActionType.GetError);
 export const resetUser = createAction(ActionType.Reset);
 
 export const createUser = createAction(ActionType.Create, props<{ payload: UserNew }>());
-export const createUserSuccess = createAction(ActionType.CreateSuccess, props<{ payload: User }>());
+export const createUserSuccess = createAction(ActionType.CreateSuccess);
 export const createUserError = createAction(ActionType.CreateError);
 
 
