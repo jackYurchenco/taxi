@@ -1,4 +1,5 @@
 export enum CoreNavigation {
-    Auth = 'auth'
+    Auth = 'auth',
+    Order = 'order'
 }
 

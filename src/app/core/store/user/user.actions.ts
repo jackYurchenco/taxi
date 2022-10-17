@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { Login, User, UserNew, UserNewPassword } from '../../../auth/shared/interfaces';
+import { Login, UserNew, UserNewPassword } from '../../../auth/shared/interfaces';
+import { User } from '../../interfaces';
 
 import { UserTypes as ActionType } from './user.types';
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, map, Observable, Subscription } from 'rxjs';
-import { User } from '../../shared/interfaces';
+import { User } from 'src/app/core/interfaces';
 import { getUser } from '../../../core/store/user/user.actions';
 
 @Component({

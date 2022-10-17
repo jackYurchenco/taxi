@@ -1,4 +1,4 @@
-import { Discount } from "./discount";
+import { Discount } from "../../auth/shared/interfaces/discount";
 
 export interface User {
 	name: string | null,
@@ -13,5 +13,6 @@ export interface User {
 	version: number,
 	discount: Discount,
 	paymentType: number,
-	clientBonuses: number
+	clientBonuses: number,
+	token: string | null
 }

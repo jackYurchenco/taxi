@@ -6,8 +6,8 @@ import { catchError, exhaustMap, map, mergeMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { sha512 } from 'sha512-crypt-ts';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Payload } from '../../interfaces';
-import { Login, User, UserNew, UserNewPassword } from 'src/app/auth/shared/interfaces';
+import { Payload, User } from '../../interfaces';
+import { Login, UserNew, UserNewPassword } from 'src/app/auth/shared/interfaces';
 import { HttpService } from '../../services/http.service';
 import { MessagesService } from '../../services/messages.service';
 import { environment } from 'src/environments/environment';
@@ -83,6 +83,7 @@ export class UserEffects {
 				}).pipe(
 					map((response: any) => {
 						this._store.dispatch(loading({ payload: false }));
+						this._router.navigate([CoreNavigation.Order])
 						return ({
 							payload: {
 								name: response.user_full_name,
@@ -100,7 +101,8 @@ export class UserEffects {
 									unit: response.discount.unit
 								},
 								paymentType: response.payment_type,
-								clientBonuses: response.client_bonuses
+								clientBonuses: response.client_bonuses,
+								token: sha512.base64(`${ action.payload!.login }:${ sha512.hex(action.payload!.password) }`) 
 							},
 							type: UserTypesSuccess
 						});

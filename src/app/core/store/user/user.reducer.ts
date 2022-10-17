@@ -1,5 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { User } from '../../../auth/shared/interfaces';
+import { User } from '../../interfaces';
+
 import {
 	checkCodeForRestore,
 	checkCodeForRestoreError,
@@ -38,7 +39,8 @@ const initialState: User = {
 		unit: ''
 	},
 	paymentType: 0,
-	clientBonuses: 0
+	clientBonuses: 0,
+	token: null
 };
 
 const scoreboardReducer = createReducer(
