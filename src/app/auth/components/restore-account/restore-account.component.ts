@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { checkCodeForRestore, restoreUserPassword, sendCodeToPhoneForRestore } from '../../shared/store/user/user.actions';
-import { UserTypes } from '../../shared/store/user/user.types';
+import { checkCodeForRestore, restoreUserPassword, sendCodeToPhoneForRestore } from '../../../core/store/user/user.actions';
+import { UserTypes } from '../../../core/store/user/user.types';
 
 @Component({
   selector: 'app-restore-account',
@@ -62,6 +62,4 @@ export class RestoreAccountComponent implements OnInit {
       }))
     }
   }
-
-
 }

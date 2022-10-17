@@ -2,22 +2,18 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-
-import { environment } from 'src/environments/environment';
-
 import { catchError, exhaustMap, map, mergeMap } from 'rxjs/operators';
-
 import { Router } from '@angular/router';
-import { HttpService } from 'src/app/core/services/http.service';
-import { Login, User, UserNew, UserNewPassword } from '../../interfaces';
-import { UserTypes as ActionType } from './user.types';
-import { ApiService } from 'src/app/core/services/api.service';
 import { sha512 } from 'sha512-crypt-ts';
-import { MessagesService } from 'src/app/core/services/messages.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { CoreNavigation } from 'src/app/core/constants/core-navigation';
-import { Payload } from 'src/app/core/interfaces';
-import { loading } from 'src/app/core/store/loading/loading.actions';
+import { Payload } from '../../interfaces';
+import { Login, User, UserNew, UserNewPassword } from 'src/app/auth/shared/interfaces';
+import { HttpService } from '../../services/http.service';
+import { MessagesService } from '../../services/messages.service';
+import { environment } from 'src/environments/environment';
+import { loading } from '../loading/loading.actions';
+import { UserTypes } from './user.types';
+import { CoreNavigation } from '../../constants/core-navigation';
 
 
 @Injectable()
@@ -30,7 +26,6 @@ export class UserEffects {
 	checkCodeForRestore$: Observable<Action>;
 	restoreUserPassword$: Observable<Action>;
 	constructor(
-		private _apiService: ApiService,
 		private _store: Store<{ loading: boolean }>,
 		private _httpService: HttpService,
 		private _actions$: Actions,
@@ -40,47 +35,46 @@ export class UserEffects {
 	) {
 		this.loading$ = this._store.select((state) => state.loading);
 		this.getUser$ = this.getUser(
-			`${this._apiService.host}/${environment.api.account.base}`,
-			ActionType.Get,
-			ActionType.GetSuccess,
-			ActionType.GetError
+			`${environment.api.host}/${environment.api.account.base}`,
+			UserTypes.Get,
+			UserTypes.GetSuccess,
+			UserTypes.GetError
 		);
 		this.createUser$ = this.createUser(
-			`${this._apiService.host}/${environment.api.account.register.base}`,
-			ActionType.Create,
-			ActionType.CreateSuccess,
-			ActionType.CreateError
+			`${environment.api.host}/${environment.api.account.register.base}`,
+			UserTypes.Create,
+			UserTypes.CreateSuccess,
+			UserTypes.CreateError
 		);
 		this.sendCodeToPhoneForRegister$  = this.sendCodeToPhoneForRegister(
-			`${this._apiService.host}/${environment.api.account.register.sendConfirmCode}`,
-			ActionType.SendCodeForRegister,
-			ActionType.SendCodeForRegisterSuccess,
-			ActionType.SendCodeForRegisterError
+			`${environment.api.host}/${environment.api.account.register.sendConfirmCode}`,
+			UserTypes.SendCodeForRegister,
+			UserTypes.SendCodeForRegisterSuccess,
+			UserTypes.SendCodeForRegisterError
 		);
 		this.sendCodeToPhoneForRestore$  = this.sendCodeToPhoneForRestore(
-			`${ this._apiService.host}/${environment.api.account.restore.sendConfirmCode }`,
-			ActionType.SendCodeForRestore,
-			ActionType.SendCodeForRestoreSuccess,
-			ActionType.SendCodeForRestoreError
+			`${ environment.api.host}/${environment.api.account.restore.sendConfirmCode }`,
+			UserTypes.SendCodeForRestore,
+			UserTypes.SendCodeForRestoreSuccess,
+			UserTypes.SendCodeForRestoreError
 		);
 		this.checkCodeForRestore$  = this.checkCodeForRestore(
-			`${ this._apiService.host}/${environment.api.account.restore.checkConfirmCode }`,
-			ActionType.CheckCodeForRestore,
-			ActionType.CheckCodeForRestoreSuccess,
-			ActionType.CheckCodeForRestoreError
+			`${ environment.api.host}/${environment.api.account.restore.checkConfirmCode }`,
+			UserTypes.CheckCodeForRestore,
+			UserTypes.CheckCodeForRestoreSuccess,
+			UserTypes.CheckCodeForRestoreError
 		);
-
 		this.restoreUserPassword$  = this.restoreUserPassword(
-			`${ this._apiService.host}/${environment.api.account.restore.base }`,
-			ActionType.RestorePassword,
-			ActionType.RestorePasswordSuccess,
-			ActionType.RestorePasswordError
+			`${ environment.api.host}/${environment.api.account.restore.base }`,
+			UserTypes.RestorePassword,
+			UserTypes.RestorePasswordSuccess,
+			UserTypes.RestorePasswordError
 		);
 	}
 
-	getUser(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Payload<User>>{
+	getUser(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Payload<User>>{
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			exhaustMap((action: Payload<Login>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -108,23 +102,23 @@ export class UserEffects {
 								paymentType: response.payment_type,
 								clientBonuses: response.client_bonuses
 							},
-							type: actionTypeSuccess
+							type: UserTypesSuccess
 						});
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 					this._messagesService.error(response.status, response.error.Message)
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))
     );
   }
 
-	createUser(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Action> {
+	createUser(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Action> {
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			mergeMap((action: Payload<UserNew>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -140,22 +134,22 @@ export class UserEffects {
 						this._router.navigate([`./${CoreNavigation.Auth}`], {
 							queryParams: { phone: action.payload!.phone.replace(/\-/g,'') }
 						})
-						return ({ type: actionTypeSuccess });
+						return ({ type: UserTypesSuccess });
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 						this._messagesService.error(response.status, response.error.Message);
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))
     );
   }
 
-	restoreUserPassword(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Action> {
+	restoreUserPassword(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Action> {
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			mergeMap((action: Payload<UserNewPassword>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -170,22 +164,22 @@ export class UserEffects {
 						this._router.navigate([`./${CoreNavigation.Auth}`], {
 							queryParams: { phone: action.payload!.phone.replace(/\-/g,'') }
 						})
-						return ({ type: actionTypeSuccess });
+						return ({ type: UserTypesSuccess });
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 						this._messagesService.error(response.status, response.error.Message);
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))
     );
   }
 
-	sendCodeToPhoneForRegister(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Action> {
+	sendCodeToPhoneForRegister(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Action> {
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			exhaustMap((action: Payload<string>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -194,22 +188,22 @@ export class UserEffects {
 					map(() => {
 						this._store.dispatch(loading({ payload: false }));
 						this._messagesService.success(200, "CodeSendedToPhone", action.payload)
-						return ({ type: actionTypeSuccess });
+						return ({ type: UserTypesSuccess });
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 						this._messagesService.error(response.status, response.error.Message)
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))
     );
   }
 
-	sendCodeToPhoneForRestore(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Action> {
+	sendCodeToPhoneForRestore(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Action> {
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			exhaustMap((action: Payload<string>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -218,22 +212,22 @@ export class UserEffects {
 					map(() => {
 						this._store.dispatch(loading({ payload: false }));
 						this._messagesService.success(200, "CodeSendedToPhone", action.payload)
-						return ({ type: actionTypeSuccess });
+						return ({ type: UserTypesSuccess });
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 						this._messagesService.error(response.status, response.error.Message)
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))
     );
   }
 
-	checkCodeForRestore(url: string, actionType: string, actionTypeSuccess: string, actionTypeError: string): Observable<Action> {
+	checkCodeForRestore(url: string, UserTypes: string, UserTypesSuccess: string, UserTypesError: string): Observable<Action> {
     return createEffect(() => this._actions$.pipe(
-			ofType(actionType),
+			ofType(UserTypes),
 			exhaustMap((action: Payload<{ code: string, phone: string}>) => {
 				this._store.dispatch(loading({ payload: true }));
 				return this._httpService.post(url, {
@@ -243,13 +237,13 @@ export class UserEffects {
 					map(() => {
 						this._store.dispatch(loading({ payload: false }));
 						this._messagesService.success(200, "CodeSendedToPhone", action.payload!.phone)
-						return ({ type: actionTypeSuccess });
+						return ({ type: UserTypesSuccess });
 					}),
 					catchError((response: HttpErrorResponse) => {
 						this._store.dispatch(loading({ payload: false }));
 						//this._errorService.onError(error, errorMessage);
 						this._messagesService.error(response.status, response.error.Message)
-						return of({ type: actionTypeError });
+						return of({ type: UserTypesError });
 					})
 				);
 			}))

@@ -1,7 +1,7 @@
 <form 
 	[formGroup]="form" 
 	novalidate 
-	(ngSubmit)="auth(form)"
+	(ngSubmit)="auth(form.value.login, form.value.password)"
 >
 	<div>
 		<!--fileds-->

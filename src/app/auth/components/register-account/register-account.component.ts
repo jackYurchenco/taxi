@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { createUser, sendCodeToPhoneForRegister } from '../../shared/store/user/user.actions';
+import { createUser, sendCodeToPhoneForRegister } from '../../../core/store/user/user.actions';
 
 @Component({
   selector: 'app-register-account',

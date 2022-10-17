@@ -1,5 +1,5 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { User } from '../../interfaces';
+import { User } from '../../../auth/shared/interfaces';
 import {
 	checkCodeForRestore,
 	checkCodeForRestoreError,

@@ -7,7 +7,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpService } from './core/services/http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ApiService } from './core/services/api.service';
 import { MessagesService } from './core/services/messages.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -15,6 +14,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
 import * as loading from './core/store/loading/loading.reducer';
+import * as user from './core/store/user/user.reducer';
+import { UserEffects } from './core/store/user/user.effects';
+
 
 @NgModule({
   declarations: [ 
@@ -28,8 +30,9 @@ import * as loading from './core/store/loading/loading.reducer';
     AppRoutingModule,
     StoreModule.forRoot({
       loading: loading.reducer,
+      user: user.reducer
     }, {}),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([UserEffects]),
 		TranslateModule.forRoot({
 			loader: {
         provide: TranslateLoader,
@@ -40,12 +43,6 @@ import * as loading from './core/store/loading/loading.reducer';
     ToastModule,
   ],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (appService: ApiService) => () => appService.load(),
-      deps: [ApiService],
-      multi: true
-    },
     HttpService,
     MessagesService,
     MessageService

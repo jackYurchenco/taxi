@@ -21,8 +21,6 @@ import { AuthComponent } from './components/auth/auth.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { RestoreAccountComponent } from './components/restore-account/restore-account.component';
-import { UserEffects } from './shared/store/user/user.effects';
-import * as user from './shared/store/user/user.reducer';
 import { TranslateModule } from '@ngx-translate/core';
 import { DirectivesModule } from '../core/directives/directives.module';
 import { LogInNavigationComponent } from './components/log-in/log-in-navigation/log-in-navigation.component';
@@ -37,8 +35,6 @@ import { RestoreAccountNavigationComponent } from './components/restore-account/
     FormsModule,
     ReactiveFormsModule,
 
-    FlexLayoutModule,
-
     //custom
     DirectivesModule,
 
@@ -52,9 +48,8 @@ import { RestoreAccountNavigationComponent } from './components/restore-account/
 
 
     TranslateModule.forChild(),
-    //ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: `never` }),
-    StoreModule.forFeature(`user`, user.reducer),
-    EffectsModule.forFeature([UserEffects])
+    //StoreModule.forFeature(`user`, user.reducer),
+    //EffectsModule.forFeature([])
   ],
   declarations: [
     AuthComponent,

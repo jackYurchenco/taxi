@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, map, Observable, Subscription } from 'rxjs';
 import { User } from '../../shared/interfaces';
-import { getUser } from '../../shared/store/user/user.actions';
+import { getUser } from '../../../core/store/user/user.actions';
 
 @Component({
   selector: 'app-log-in',
@@ -37,11 +37,9 @@ export class LogInComponent implements OnInit, OnDestroy {
       ).subscribe((phone)=>{
         this.form.patchValue({
           login: phone
-       });
+        });
       })
     )
-    
-
     this.subscription.add(
       this.user$.subscribe((user: User)=>{
         console.log(user) 
@@ -53,11 +51,7 @@ export class LogInComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  auth(form: FormGroup) {
-    this.getUser(form.value.login, form.value.password)
-  }
-
-  getUser(login: string, password: string) {
+  auth(login: string, password: string) {
     this._store.dispatch(getUser({  
       payload: {
         login,

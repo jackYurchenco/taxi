@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api: {
+    host: "http://31.43.107.151:7312",
     account: {
       base: 'api/account',
       register: {
@@ -17,7 +18,6 @@ export const environment = {
         checkConfirmCode: 'api/account/restore/checkConfirmCode'
       }
     },
-    
   }
 };
 
