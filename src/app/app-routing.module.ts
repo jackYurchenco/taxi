@@ -15,6 +15,10 @@ const routes: Routes = [
     path: CoreNavigation.Order,
     canActivate: [AuthGuard],
   },
+  { 
+    loadChildren: () => import(`./not-found/not-found.module`).then((module) => module.NotFoundModule),
+    path: '**'
+  },
 ];
 
 @NgModule({
