@@ -19,7 +19,7 @@
 						pRipple 
 						icon="pi pi-send" 
 						styleClass="p-button-warn"
-						(onClick)="sendCode(form.value.phone)"
+						(clickBtn)="sendCode(form.value.phone)"
 						pTooltip="{{ 'SendVerificationCode' | translate}}" 
 						tooltipPosition="top"
 					>
@@ -48,7 +48,7 @@
 						pRipple 
 						icon="pi pi-refresh" 
 						styleClass="p-button-warn"
-						(onClick)="checkCode(form.value.phone, form.value.code)"
+						(clickBtn)="checkCode(form.value.phone, form.value.code)"
 						pTooltip="{{ 'CheckVerificationCode' | translate}}" 
 						tooltipPosition="top"
 					>

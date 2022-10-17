@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { createUser, sendCodeToPhoneForRegister } from '../../../core/store/user/user.actions';
@@ -8,7 +8,7 @@ import { createUser, sendCodeToPhoneForRegister } from '../../../core/store/user
   templateUrl: './register-account.component.html',
   styleUrls: ['./register-account.component.scss']
 })
-export class RegisterAccountComponent implements OnInit {
+export class RegisterAccountComponent {
   form: FormGroup;
   constructor(
     private _formBuilder: FormBuilder,
@@ -21,10 +21,6 @@ export class RegisterAccountComponent implements OnInit {
       phone: [null, [Validators.required]],
       code: [null, [Validators.required]],
     });
-  }
-
-
-  ngOnInit(): void {
   }
 
   register(form: FormGroup) {

@@ -7,12 +7,12 @@ import { throttleTime } from 'rxjs/operators';
 
 })
 export class ButtonDirective implements OnInit, OnDestroy {
-  @Output() onClick: EventEmitter<any>;
+  @Output() clickBtn: EventEmitter<any>;
   private _subscriptions: Subscription;
 
   constructor(private _el: ElementRef) {
     this._subscriptions = new Subscription();
-    this.onClick = new EventEmitter<any>();
+    this.clickBtn = new EventEmitter<any>();
   }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class ButtonDirective implements OnInit, OnDestroy {
 			fromEvent(this._el.nativeElement, `click`).pipe(
 				throttleTime(500)
 			).subscribe((event) => {
-				this.onClick.emit(event);
+				this.clickBtn.emit(event);
 			}
 		));
   }

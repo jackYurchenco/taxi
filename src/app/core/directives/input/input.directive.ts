@@ -6,11 +6,11 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   selector: `[appInput]`
 })
 export class InputDirective implements OnInit, OnDestroy {
-  @Output() onChange: EventEmitter<any>;
+  @Output() changeValue: EventEmitter<any>;
   private _subscriptions: Subscription;
   constructor(private _el: ElementRef) {
     this._subscriptions = new Subscription();
-    this.onChange = new EventEmitter<any>();
+    this.changeValue = new EventEmitter<any>();
   }
 
 
@@ -20,7 +20,7 @@ export class InputDirective implements OnInit, OnDestroy {
         debounceTime(250),
         distinctUntilChanged()
       ).subscribe((event) => {
-        this.onChange.emit(event);
+        this.changeValue.emit(event);
       })
 		);
   }
