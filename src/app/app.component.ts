@@ -11,7 +11,7 @@ import { setUser } from './core/store/user/user.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'taxi';
+  
   constructor(
     private _translateService: TranslateService,
     private _cookieService: CookieService,
