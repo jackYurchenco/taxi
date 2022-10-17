@@ -20,6 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule } from '@ngx-translate/core';
 import { DirectivesModule } from '../core/directives/directives.module';
 import { OrderComponent } from './components/order/order.component';
+import { ComponentsModule } from '../core/components/components.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { OrderComponent } from './components/order/order.component';
 
     //custom
     DirectivesModule,
+    ComponentsModule,
 
     // primeng
     ButtonModule,

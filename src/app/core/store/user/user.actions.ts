@@ -4,6 +4,8 @@ import { User } from '../../interfaces';
 
 import { UserTypes as ActionType } from './user.types';
 
+export const setUser = createAction(ActionType.Set, props<{ payload: User }>());
+
 export const getUser = createAction(ActionType.Get, props<{ payload: Login }>());
 export const getUserSuccess = createAction(ActionType.GetSuccess, props<{ payload: User }>());
 export const getUserError = createAction(ActionType.GetError);

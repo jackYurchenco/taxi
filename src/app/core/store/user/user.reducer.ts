@@ -21,6 +21,7 @@ import {
 	sendCodeToPhoneForRestore,
 	sendCodeToPhoneForRestoreError,
 	sendCodeToPhoneForRestoreSuccess,
+	setUser,
 } from './user.actions';
 
 const initialState: User = {
@@ -45,6 +46,9 @@ const initialState: User = {
 
 const scoreboardReducer = createReducer(
 	{ ...initialState },
+
+	on(setUser, (state: User, action) => action.payload),
+
 	on(getUser, (state: User) => state),
 	on(getUserSuccess, (state: User, action) => action.payload),
 	on(getUserError, (state: User) => state),

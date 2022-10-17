@@ -1,4 +1,6 @@
 export enum UserTypes {
+	Set = '[User] set',
+
 	Get = '[User] get',
 	GetSuccess = '[User] get success',
 	GetError = '[User] get error',

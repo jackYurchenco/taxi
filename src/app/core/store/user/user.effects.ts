@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { loading } from '../loading/loading.actions';
 import { UserTypes } from './user.types';
 import { CoreNavigation } from '../../constants/core-navigation';
+import { CookieService } from 'ngx-cookie';
 
 
 @Injectable()
@@ -31,7 +32,8 @@ export class UserEffects {
 		private _actions$: Actions,
 		//private _errorService: ErrorService,
 		private _messagesService: MessagesService,
-		private _router: Router
+		private _router: Router,
+		private _cookieService: CookieService,
 	) {
 		this.loading$ = this._store.select((state) => state.loading);
 		this.getUser$ = this.getUser(
@@ -84,26 +86,30 @@ export class UserEffects {
 					map((response: any) => {
 						this._store.dispatch(loading({ payload: false }));
 						this._router.navigate([CoreNavigation.Order])
-						return ({
-							payload: {
-								name: response.user_full_name,
-								phone: response.user_phone,
-								balance: response.user_balance,
-								address: response.route_address_from,
-								addressNumber: response.route_address_number_from,
-								addressEntrance: response.route_address_entrance_from,
-								addressApartment: response.route_address_apartment_from,
-								roles: response.roles.split(','),
-								clientSubCards: response.client_sub_cards,
-								version: response.version,
-								discount: {
-									value: response.discount.value,
-									unit: response.discount.unit
-								},
-								paymentType: response.payment_type,
-								clientBonuses: response.client_bonuses,
-								token: sha512.base64(`${ action.payload!.login }:${ sha512.hex(action.payload!.password) }`) 
+						let user: User = {
+							name: response.user_full_name,
+							phone: response.user_phone,
+							balance: response.user_balance,
+							address: response.route_address_from,
+							addressNumber: response.route_address_number_from,
+							addressEntrance: response.route_address_entrance_from,
+							addressApartment: response.route_address_apartment_from,
+							roles: response.roles.split(','),
+							clientSubCards: response.client_sub_cards,
+							version: response.version,
+							discount: {
+								value: response.discount.value,
+								unit: response.discount.unit
 							},
+							paymentType: response.payment_type,
+							clientBonuses: response.client_bonuses,
+							token: sha512.base64(`${ action.payload!.login }:${ sha512.hex(action.payload!.password) }`) 
+						}
+						this._cookieService.put('user', JSON.stringify(user), {
+							path: window.location.hostname,
+						})
+						return ({
+							payload: user,
 							type: UserTypesSuccess
 						});
 					}),

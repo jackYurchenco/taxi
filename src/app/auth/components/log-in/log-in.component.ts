@@ -39,12 +39,7 @@ export class LogInComponent implements OnInit, OnDestroy {
           login: phone
         });
       })
-    )
-    this.subscription.add(
-      this.user$.subscribe((user: User)=>{
-        console.log(user) 
-      })
-    )   
+    )  
   }
 
   ngOnDestroy(): void {

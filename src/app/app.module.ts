@@ -16,11 +16,12 @@ import { CommonModule } from '@angular/common';
 import * as loading from './core/store/loading/loading.reducer';
 import * as user from './core/store/user/user.reducer';
 import { UserEffects } from './core/store/user/user.effects';
+import { CookieModule } from 'ngx-cookie';
 
 
 @NgModule({
   declarations: [ 
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +41,7 @@ import { UserEffects } from './core/store/user/user.effects';
         deps: [HttpClient],
 			}
 		}),
+    CookieModule.withOptions(),
     ToastModule,
   ],
   providers: [
